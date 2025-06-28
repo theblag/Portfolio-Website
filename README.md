@@ -1,12 +1,31 @@
-# React + Vite
+# Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built with **React**, **Tailwind CSS**, and **Three.js**, designed to showcase projects, skills, and contact information.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 [View Live](https://your-vercel-link.vercel.app)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Interactive 3D elements using GLB models
+- Smooth scroll-based animations
+- Tech stack with icons and categorization
+- Projects section with carousel and live/code links
+- Fully responsive and accessible design
+- Contact section with links to social profiles
+
+## 🛠️ Tech Stack Used
+
+- **React**: A JavaScript library for building fast and dynamic user interfaces.
+- **Vite**: A blazing-fast build tool that offers an instant dev server and optimized production builds.
+- **JavaScript (ES6+)**: Core scripting language used throughout the application for logic and interactivity.
+- **Tailwind CSS**: A utility-first CSS framework for creating responsive and modern UIs with ease.
+- **Three.js**: A JavaScript 3D library used to display interactive 3D models on the web.
+- **Blender**: 3D creation software used for modeling and exporting GLB files integrated into the site.
+- **GSAP (GreenSock Animation Platform)**: A robust animation library for smooth, performant transitions and animations.
+- **Lordicon**: A library of animated icons used to enhance visual appeal and interaction.
+- **TechStackIcons**: Icon set used to visually represent various technologies used in the portfolio.
+
+## 📁 Folder Structure
+

@@ -491,7 +491,7 @@ const SpacePortfolio = () => {
                 duration: 1.5,
             }).from(".scroll-down-text", {
                 opacity: 0,
-                duration: 1.5,
+                duration: 0.5,
             })
         }, comp)
 

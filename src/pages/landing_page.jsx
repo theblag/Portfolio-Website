@@ -485,6 +485,7 @@ const SpacePortfolio = () => {
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             const t1 = gsap.timeline()
+            const t2=gsap.timeline()
             t1.from('#main-heading', {
                 y: -20,
                 opacity: 0,
@@ -493,7 +494,8 @@ const SpacePortfolio = () => {
                 y: -20,
                 opacity: 0,
                 duration: 1.5,
-            }).from(".scroll-down-text", {
+            })
+            t2.from(".scroll-down-text", {
                 opacity: 0,
                 duration: 0.5,
             })

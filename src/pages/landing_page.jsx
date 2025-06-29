@@ -135,8 +135,17 @@ const SpacePortfolio = () => {
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-
-        // Existing scroll animation
+        const isMobile = window.innerWidth < 768;
+        gsap.to(".scroll-down-text", {
+            scrollTrigger: {
+                trigger: ".scroll-down-text",
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+            },
+            opacity: 0,
+            duration: 0.5
+        });
+        if(!isMobile){
         gsap.to(".scroll-down-text", {
             scrollTrigger: {
                 trigger: ".scroll-down-text",
@@ -477,12 +486,14 @@ const SpacePortfolio = () => {
                 toggleActions: "play none none reverse"
             }
         });
+    }
 
     }, [])
 
 
     const comp = useRef(null);
     useLayoutEffect(() => {
+        
         let ctx = gsap.context(() => {
             const t1 = gsap.timeline()
             const t2=gsap.timeline()
@@ -525,7 +536,9 @@ const SpacePortfolio = () => {
                 <div onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })} className="scroll-down-text w-full fixed bottom-8">
                     <ScrollDown />
                 </div>
-                <Profile />
+                <div className="hidden md:block">
+                <Profile  />
+                </div>
                 
 
             </div>
@@ -712,7 +725,7 @@ const SpacePortfolio = () => {
 
                                 {/* Navigation Buttons */}
                                 {totalSlides > 1 && (
-                                    <div className="project-nav-buttons">
+                                    <div className="">
                                         <button
                                             onClick={prevSlide}
                                             className="project-nav-button-l absolute left-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-yellow-600/80 to-orange-500/80 hover:from-yellow-500 hover:to-orange-400 text-white p-3 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-yellow-500/25 z-10"
@@ -756,7 +769,7 @@ const SpacePortfolio = () => {
                 </div>
             </div>
             <div className="neptune flex md:h-[110vh]">
-                <div className="md:w-[45%] md:ml-40 md:mr-32 ml-10 mt-20">
+                <div className="md:w-[45%] md:ml-40 md:mr-32 mr-10 ml-10 mt-20">
                     <div className="flex-1 max-w-2xl">
                         <div className="mb-12">
                             <p className="neptune-subtitle text-gray-400 inter text-sm mb-2">

@@ -13,6 +13,9 @@ import NeptuneModel from '../components/neptune_model'
 import StackIcon from 'tech-stack-icons';
 import Profile from '../components/profile'
 import ScrollDown from '../components/scroll_down';
+import Frontend from '../components/frontent_techstack';
+import Backend from '../components/backend_techstack'
+import Tools from '../components/tools_techstack';
 
 import Kotinos from '../assets/kotinos.png'
 import Vaultmaster from '../assets/vaultmaster.png'
@@ -107,7 +110,7 @@ const SpacePortfolio = () => {
 
                 <div className="flex gap-3">
                     <button
-                        onClick={() => window.open(project.link, '_blank','noopener,noreferrer')}
+                        onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
                         className="flex-1 inter px-4 py-2 bg-gradient-to-r from-yellow-600 to-orange-500 hover:from-yellow-500 hover:to-orange-400 text-white text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-yellow-500/25"
                     >
                         View Live
@@ -605,101 +608,27 @@ const SpacePortfolio = () => {
                                 {/* Frontend */}
                                 <div className="frontend-category space-y-3">
                                     <h3 className="text-xl text-red-400 font-semibold inter">Languages & Frontend</h3>
-                                    <div className="flex flex-wrap gap-3">
-                                        {[
-                                            { name: 'C, C++', icon: 'c++' },         // Use 'cplusplus' or custom icon if needed
-                                            { name: 'Python', icon: 'python' },
-                                            { name: 'JavaScript', icon: 'js' },
-                                            { name: 'Java', icon: 'java' },
-                                            { name: 'React', icon: 'react' },
-                                            { name: 'HTML', icon: 'html5' },
-                                            { name: 'PHP', icon: 'php' },
-                                            { name: 'CSS', icon: 'css3' },
-                                            { name: 'Tailwind CSS', icon: 'tailwindcss' },
-                                            { name: 'Next.js', icon: 'nextjs' }
-                                        ].map((tech) => (
-                                            <div
+                                    <Frontend />
 
-                                                key={tech.name}
-                                                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
-                                            >
 
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <StackIcon name={tech.icon.toLowerCase()} style={{ filter: tech.name == 'Next.js' ? 'invert(1)' : 'invert(0)' }} className=" w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
-                                                    <span className="text-gray-200 font-medium group-hover:text-red-300 inter">
-                                                        {tech.name}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+
                                 </div>
 
                                 {/* Backend */}
                                 <div className="backend-category space-y-3">
                                     <h3 className="text-xl text-orange-400 font-semibold inter">Backend</h3>
-                                    <div className="flex flex-wrap gap-3">
-                                        {[
-                                            { name: 'MongoDB', icon: 'mongodb' },
-                                            { name: 'MySQL', icon: 'mysql' },
-                                            { name: 'Supabase', icon: 'supabase' },
-                                            { name: 'Node.js', icon: 'nodejs' },
-                                            { name: 'Express.js', icon: 'expressjs' }
-                                        ].map((tech) => (
-                                            <div
-                                                key={tech.name}
-                                                className="group hover:bg-gradient-to-br from-orange-900/20 to-yellow-900/20 border border-orange-500/30 rounded-full p-3 hover:border-orange-400/60  transition-all duration-300"
-                                            >
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <StackIcon name={tech.icon.toLowerCase()} style={{ filter: tech.name == 'Express.js' ? 'invert(1)' : 'invert(0)' }} className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
-
-                                                    <span className="text-gray-200 inter font-medium group-hover:text-orange-300">
-                                                        {tech.name}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <Backend />
                                 </div>
 
 
                                 {/* Tools & Others */}
                                 <div className="tools-category space-y-3">
                                     <h3 className="text-xl text-yellow-400 font-semibold inter">Tools & Others</h3>
-                                    <div className="flex flex-wrap gap-3">
-                                        {/* Blender */}
-                                        <div className="group hover:bg-gradient-to-br from-yellow-900/20 to-red-900/20 border border-yellow-500/30 rounded-full p-3 hover:border-yellow-400/60 transition-all duration-300">
-                                            <div className="flex items-center justify-center gap-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
-                                                    <path fill="#01579B" d="M34.932,22.478C33.769,21.56,32.206,21.001,30.5,21c-1.706,0.001-3.27,0.56-4.433,1.478 c-1.184,0.935-1.969,2.252-2.059,3.747c-0.091,1.536,0.57,2.965,1.732,4.023C26.925,31.324,28.613,32,30.501,32 c1.887,0,3.574-0.676,4.757-1.753c1.162-1.057,1.824-2.486,1.734-4.023C36.902,24.731,36.116,23.413,34.932,22.478z"></path><path fill="#FF6D00" d="M45.871,25.932c-0.259-1.823-0.891-3.535-1.861-5.095c-0.891-1.433-2.035-2.688-3.397-3.745l0.002-0.002 l-0.037-0.012c-0.028-0.025-0.05-0.054-0.079-0.078L26.249,6.438c-0.86-0.689-2.12-0.552-2.811,0.313 c-0.69,0.862-0.551,2.121,0.313,2.811L29.739,14H10.5C9.125,14,8,15.125,8,16.5S9.125,19,10.5,19h7.154L2.873,31.602 c-1.048,0.898-1.17,2.478-0.271,3.525C3.097,35.704,3.797,36,4.501,36c0.576,0,1.154-0.198,1.626-0.602l8.954-7.675 c-0.022,0.807-0.039,1.538-0.035,1.761C15.046,33,19,42,30.682,42c8.318,0,15.28-5,15.28-13.261 C46.034,27.805,46.003,26.867,45.871,25.932z M39.525,29.153c-0.401,1.087-1.05,2.104-1.935,2.992 c-1.81,1.82-4.343,2.85-7.088,2.854c-2.745,0.005-5.28-1.017-7.091-2.832c-0.885-0.885-1.535-1.901-1.937-2.986 c-0.392-1.065-0.545-2.195-0.444-3.335c0.098-1.116,0.432-2.179,0.971-3.141c0.529-0.946,1.257-1.8,2.154-2.524 c1.76-1.414,3.999-2.179,6.345-2.182c2.346-0.003,4.584,0.756,6.345,2.164c0.897,0.72,1.624,1.571,2.152,2.515 c0.539,0.961,0.874,2.023,0.973,3.138C40.07,26.958,39.918,28.087,39.525,29.153z"></path>
-                                                </svg>
-                                                <span className="text-gray-200 inter font-medium group-hover:text-yellow-300">
-                                                    Blender
-                                                </span>
-                                            </div>
-                                        </div>
-                                        {[
-                                            { name: 'Git', icon: 'git' },
-                                            { name: 'Figma', icon: 'figma' },
-                                            { name: 'Canva', icon: 'canva' },
-                                            { name: 'Vercel', icon: 'vercel' },
-                                            { name: 'Render', icon: 'render' }
-                                        ].map((tech) => (
-                                            <div
-                                                key={tech.name}
-                                                className="group hover:bg-gradient-to-br from-yellow-900/20 to-red-900/20 border border-yellow-500/30 rounded-full p-3 hover:border-yellow-400/60 transition-all duration-300"
-                                            >
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <StackIcon name={tech.icon.toLowerCase()} style={{ filter: tech.name == 'Render' || tech.name == 'Vercel' ? 'invert(1)' : 'invert(0)' }} className="w-5 h-5 text-orange-400 group-hover:scale-110 transition-transform" />
+                                    
+                                    <Tools />
 
-                                                    <span className="text-gray-200 inter font-medium group-hover:text-yellow-300">
-                                                        {tech.name}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        ))}
+                                        
 
-                                    </div>
 
                                 </div>
                             </div>

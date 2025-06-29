@@ -10,7 +10,6 @@ import PlanetModel from '../components/earth_model';
 import MarsModel from '../components/mars_model';
 import JupiterModel from '../components/jupiter_model';
 import NeptuneModel from '../components/neptune_model'
-import StackIcon from 'tech-stack-icons';
 import Profile from '../components/profile'
 import ScrollDown from '../components/scroll_down';
 import Frontend from '../components/frontent_techstack';

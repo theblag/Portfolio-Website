@@ -662,7 +662,7 @@ const SpacePortfolio = () => {
 
                         {/* <directionalLight position={[10, 10, 0]} intensity={1} color="#ffffff" /> */}
                         <Suspense fallback={<Loader />}>
-                            <MarsModel scale={2.3} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                            <MarsModel scale={2.4} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
                         </Suspense>
                         <OrbitControls enableZoom={false} />
 

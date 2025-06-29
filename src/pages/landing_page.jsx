@@ -6,6 +6,7 @@ import '../App.css'
 import Space from '../components/space';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
+
 import PlanetModel from '../components/earth_model';
 import MarsModel from '../components/mars_model';
 import JupiterModel from '../components/jupiter_model';
@@ -15,6 +16,7 @@ import ScrollDown from '../components/scroll_down';
 import Frontend from '../components/frontent_techstack';
 import Backend from '../components/backend_techstack'
 import Tools from '../components/tools_techstack';
+import Loader from '../components/Loading';
 
 import Kotinos from '../assets/kotinos.png'
 import Vaultmaster from '../assets/vaultmaster.png'
@@ -531,7 +533,9 @@ const SpacePortfolio = () => {
                     <Canvas className='relative z-50' camera={{ position: [0, 2, 6], fov: 50 }}>
                         <ambientLight intensity={5.5} />
                         {/* <directionalLight position={[10, 10, 0]} intensity={1} color="#ffffff" /> */}
-                        <PlanetModel scale={2.35} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        <Suspense fallback={<Loader />}>
+                            <PlanetModel scale={2.35} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        </Suspense>
                         <OrbitControls enableZoom={false} />
 
                         {/* <Environment preset="sunset" /> */}
@@ -623,10 +627,10 @@ const SpacePortfolio = () => {
                                 {/* Tools & Others */}
                                 <div className="tools-category space-y-3">
                                     <h3 className="text-xl text-yellow-400 font-semibold inter">Tools & Others</h3>
-                                    
+
                                     <Tools />
 
-                                        
+
 
 
                                 </div>
@@ -639,8 +643,11 @@ const SpacePortfolio = () => {
                 <div className='relative z-50 mt-40 md:h-[60vh] md:w-[55%] hidden md:block'>
                     <Canvas className='relative z-50' camera={{ position: [0, 2, 6], fov: 50 }}>
                         <ambientLight intensity={1.5} />
+
                         {/* <directionalLight position={[10, 10, 0]} intensity={1} color="#ffffff" /> */}
-                        <MarsModel scale={2.3} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        <Suspense fallback={<Loader />}>
+                            <MarsModel scale={2.3} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        </Suspense>
                         <OrbitControls enableZoom={false} />
 
                         {/* <Environment preset="sunset" /> */}
@@ -653,7 +660,9 @@ const SpacePortfolio = () => {
                     <Canvas className='relative z-50' camera={{ position: [0, 2, 6], fov: 50 }}>
                         <ambientLight intensity={1.5} />
                         {/* <directionalLight position={[10, 10, 0]} intensity={1} color="#ffffff" /> */}
-                        <JupiterModel scale={2.7} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        <Suspense fallback={<Loader />}>
+                            <JupiterModel scale={2.7} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        </Suspense>
                         <OrbitControls enableZoom={false} />
 
                         {/* <Environment preset="sunset" /> */}
@@ -830,7 +839,9 @@ const SpacePortfolio = () => {
                     <Canvas className='relative z-50' camera={{ position: [0, 2, 6], fov: 50 }}>
                         <ambientLight intensity={1.5} />
                         {/* <directionalLight position={[10, 10, 0]} intensity={1} color="#ffffff" /> */}
-                        <NeptuneModel scale={2.5} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        <Suspense fallback={<Loader />}>
+                            <NeptuneModel scale={2.5} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                        </Suspense>
                         <OrbitControls enableZoom={false} />
 
                         {/* <Environment preset="sunset" /> */}

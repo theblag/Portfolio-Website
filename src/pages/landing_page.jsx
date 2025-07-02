@@ -23,6 +23,7 @@ import Vaultmaster from '../assets/vaultmaster.png'
 import Tabout from '../assets/tabout.png'
 import Echonotes from '../assets/echonotes.png';
 import Mplayer from '../assets/mplayer.png';
+import Mocktern from '../assets/mocktern.png'
 
 const SpacePortfolio = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,6 +43,14 @@ const SpacePortfolio = () => {
             link: "https://github.com/theblag/tabout-website-blocker",
             code: "https://github.com/theblag/tabout-website-blocker",
             image: Tabout
+        },
+        {
+            title: "Mocktern",
+            description: "A fake internship and course detector, which combines advanced AI analysis with real community consensus to protect you from scams and highlight real opportunities instantly.",
+            tech: ["React", "Firebase", "Tailwind CSS","Gemini API",],
+            link: "https://mocktern.vercel.app",
+            code: "https://github.com/theblag/mocktern",
+            image: Mocktern
         },
         {
             title: "Kotinos",
@@ -145,358 +154,358 @@ const SpacePortfolio = () => {
             opacity: 0,
             duration: 0.5
         });
-        if(!isMobile){
-        gsap.to(".scroll-down-text", {
-            scrollTrigger: {
-                trigger: ".scroll-down-text",
-                start: "top 85%",
-                toggleActions: "play none none reverse",
-            },
-            opacity: 0,
-            duration: 0.5
-        });
+        if (!isMobile) {
+            gsap.to(".scroll-down-text", {
+                scrollTrigger: {
+                    trigger: ".scroll-down-text",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                },
+                opacity: 0,
+                duration: 0.5
+            });
 
-        // Earth section animations
-        gsap.fromTo(".about-greeting", {
-            x: -100,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1,
-            scrollTrigger: {
-                trigger: ".earth",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            // Earth section animations
+            gsap.fromTo(".about-greeting", {
+                x: -100,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".earth",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".about-name", {
-            x: -80,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1.2,
-            delay: 0.3,
-            scrollTrigger: {
-                trigger: ".earth",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".about-name", {
+                x: -80,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 1.2,
+                delay: 0.3,
+                scrollTrigger: {
+                    trigger: ".earth",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".about-description", {
-            y: 50,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            delay: 0.6,
-            scrollTrigger: {
-                trigger: ".earth",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".about-description", {
+                y: 50,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                delay: 0.6,
+                scrollTrigger: {
+                    trigger: ".earth",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".about-skills", {
-            y: 30,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: 0.9,
-            scrollTrigger: {
-                trigger: ".earth",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".about-skills", {
+                y: 30,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.9,
+                scrollTrigger: {
+                    trigger: ".earth",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".about-skills", {
-            y: 30,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: 0.9,
-            scrollTrigger: {
-                trigger: ".earth",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".about-skills", {
+                y: 30,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.9,
+                scrollTrigger: {
+                    trigger: ".earth",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        // Mars section animations (Tech Stack)
-        gsap.fromTo(".tech-title", {
-            x: -100,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1,
-            scrollTrigger: {
-                trigger: ".mars",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            // Mars section animations (Tech Stack)
+            gsap.fromTo(".tech-title", {
+                x: -100,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".mars",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".tech-subtitle", {
-            x: -80,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1,
-            delay: 0.3,
-            scrollTrigger: {
-                trigger: ".mars",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".tech-subtitle", {
+                x: -80,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                delay: 0.3,
+                scrollTrigger: {
+                    trigger: ".mars",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".frontend-category", {
-            y: 50,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: 0.6,
-            scrollTrigger: {
-                trigger: ".frontend-category",
-                start: "top 90%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".frontend-category", {
+                y: 50,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.6,
+                scrollTrigger: {
+                    trigger: ".frontend-category",
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".backend-category", {
-            y: 50,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: 0.9,
-            scrollTrigger: {
-                trigger: ".backend-category",
-                start: "top 90%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".backend-category", {
+                y: 50,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.9,
+                scrollTrigger: {
+                    trigger: ".backend-category",
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".tools-category", {
-            y: 50,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: 1.2,
-            scrollTrigger: {
-                trigger: ".tools-category",
-                start: "top 90%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".tools-category", {
+                y: 50,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 1.2,
+                scrollTrigger: {
+                    trigger: ".tools-category",
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
 
-        // Jupiter section animations (Projects)
-        gsap.fromTo(".projects-title", {
-            scale: 0.8,
-            opacity: 0
-        }, {
-            scale: 1,
-            opacity: 1,
-            duration: 1.2,
-            scrollTrigger: {
-                trigger: ".jupiter",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            // Jupiter section animations (Projects)
+            gsap.fromTo(".projects-title", {
+                scale: 0.8,
+                opacity: 0
+            }, {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                scrollTrigger: {
+                    trigger: ".jupiter",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".projects-subtitle", {
-            y: 30,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            delay: 0.3,
-            scrollTrigger: {
-                trigger: ".jupiter",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".projects-subtitle", {
+                y: 30,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                delay: 0.3,
+                scrollTrigger: {
+                    trigger: ".jupiter",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".projects-carousel", {
-            x: 100,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1.2,
-            delay: 0.6,
-            scrollTrigger: {
-                trigger: ".jupiter",
-                start: "top 60%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".projects-carousel", {
+                x: 100,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 1.2,
+                delay: 0.6,
+                scrollTrigger: {
+                    trigger: ".jupiter",
+                    start: "top 60%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".project-nav-button-r", {
-            scale: 0,
-            opacity: 0
-        }, {
-            scale: 1,
-            opacity: 1,
-            duration: 0.8,
-            delay: 1.0,
-            scrollTrigger: {
-                trigger: ".jupiter",
-                start: "top 60%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".project-nav-button-r", {
+                scale: 0,
+                opacity: 0
+            }, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                delay: 1.0,
+                scrollTrigger: {
+                    trigger: ".jupiter",
+                    start: "top 60%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".project-nav-button-l", {
-            scale: 0,
-            opacity: 0
-        }, {
-            scale: 1,
-            opacity: 1,
-            duration: 0.8,
-            delay: 1.0,
-            scrollTrigger: {
-                trigger: ".jupiter",
-                start: "top 60%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".project-nav-button-l", {
+                scale: 0,
+                opacity: 0
+            }, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                delay: 1.0,
+                scrollTrigger: {
+                    trigger: ".jupiter",
+                    start: "top 60%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".project-indicators", {
-            y: 20,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.6,
-            delay: 1.3,
-            scrollTrigger: {
-                trigger: ".jupiter",
-                start: "top 60%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".project-indicators", {
+                y: 20,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                delay: 1.3,
+                scrollTrigger: {
+                    trigger: ".jupiter",
+                    start: "top 60%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        // Neptune section animations (Contact)
-        gsap.fromTo(".neptune-title", {
-            scale: 0.8,
-            opacity: 0
-        }, {
-            scale: 1,
-            opacity: 1,
-            duration: 1.2,
-            scrollTrigger: {
-                trigger: ".neptune",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            // Neptune section animations (Contact)
+            gsap.fromTo(".neptune-title", {
+                scale: 0.8,
+                opacity: 0
+            }, {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                scrollTrigger: {
+                    trigger: ".neptune",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".neptune-subtitle", {
-            y: 30,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            delay: 0.3,
-            scrollTrigger: {
-                trigger: ".neptune",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".neptune-subtitle", {
+                y: 30,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                delay: 0.3,
+                scrollTrigger: {
+                    trigger: ".neptune",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".neptune-description", {
-            y: 50,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            delay: 0.6,
-            scrollTrigger: {
-                trigger: ".neptune",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".neptune-description", {
+                y: 50,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                delay: 0.6,
+                scrollTrigger: {
+                    trigger: ".neptune",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".neptune-social", {
-            x: -50,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: 0.9,
-            scrollTrigger: {
-                trigger: ".neptune",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".neptune-social", {
+                x: -50,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.9,
+                scrollTrigger: {
+                    trigger: ".neptune",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".neptune-status", {
-            y: 20,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: 1.2,
-            scrollTrigger: {
-                trigger: ".neptune",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+            gsap.fromTo(".neptune-status", {
+                y: 20,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 1.2,
+                scrollTrigger: {
+                    trigger: ".neptune",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
 
-        gsap.fromTo(".neptune-cta", {
-            scale: 0.9,
-            opacity: 0
-        }, {
-            scale: 1,
-            opacity: 1,
-            duration: 0.6,
-            delay: 1.5,
-            scrollTrigger: {
-                trigger: ".neptune",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
-    }
+            gsap.fromTo(".neptune-cta", {
+                scale: 0.9,
+                opacity: 0
+            }, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.6,
+                delay: 1.5,
+                scrollTrigger: {
+                    trigger: ".neptune",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        }
 
     }, [])
 
 
     const comp = useRef(null);
     useLayoutEffect(() => {
-        
+
         let ctx = gsap.context(() => {
             const t1 = gsap.timeline()
-            const t2=gsap.timeline()
+            const t2 = gsap.timeline()
             t1.from('#main-heading', {
                 y: -20,
                 opacity: 0,
@@ -533,16 +542,16 @@ const SpacePortfolio = () => {
                         Designer & Developer
                     </p>
                 </div>
-                <div onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })} className="scroll-down-text w-full fixed bottom-8">
-                    <ScrollDown />
-                </div>
+
                 <div className="hidden md:block">
-                <Profile  />
+                    <Profile />
                 </div>
-                
+
 
             </div>
-
+            <div onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })} className="scroll-down-text w-full md:fixed md:bottom-8 relative bottom-32">
+                <ScrollDown />
+            </div>
             <div className="earth flex md:h-[100vh]">
 
                 <div className='relative z-50 md:h-[60vh] bg- white mt-8 md:w-[55%] hidden md:block'>
@@ -586,7 +595,7 @@ const SpacePortfolio = () => {
                             <div className="about-skills space-y-3">
                                 <h4 className="text-white font-medium">Specialized in:</h4>
                                 <div className="flex flex-wrap gap-2">
-                                    {['Full-Stack Development', '3D Web Experiences', 'UI/UX Design'].map((skill) => (
+                                    {['Full-Stack Development', '3D Web Experiences', 'Machine Learning', 'Data Science'].map((skill) => (
                                         <span
                                             key={skill}
                                             className="px-3 py-1 text-sm bg-gray-800/50 text-gray-300 rounded-full border border-gray-700/50 hover:border-blue-500/50 transition-colors"
@@ -677,7 +686,7 @@ const SpacePortfolio = () => {
                         <ambientLight intensity={1.5} />
                         {/* <directionalLight position={[10, 10, 0]} intensity={1} color="#ffffff" /> */}
                         <Suspense fallback={<Loader />}>
-                            <JupiterModel scale={2.7} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
+                            <JupiterModel scale={2.685} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
                         </Suspense>
                         <OrbitControls enableZoom={false} />
 

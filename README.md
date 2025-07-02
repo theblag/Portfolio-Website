@@ -4,7 +4,7 @@ A modern, responsive personal portfolio website built with **React**, **Tailwind
 
 ## 🔗 Live Demo
 
-👉 [View Live](https://your-vercel-link.vercel.app)
+👉 [View Live](https://aditya-a-portfolio.vercel.app)
 
 ## ✨ Features
 

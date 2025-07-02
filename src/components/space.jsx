@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 
 const SpaceBackground = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -11,23 +11,23 @@ const SpaceBackground = () => {
 
     // Generate stars with different properties
     const generateStars = (count, sizeRange, opacityRange) => {
-        return Array.from({ length: count }, (_, i) => ({
-            id: i,
-            x: Math.random() * 100,
-            y: Math.random() * 300, // Extended height for scrolling
-            size: Math.random() * (sizeRange[1] - sizeRange[0]) + sizeRange[0],
-            opacity: Math.random() * (opacityRange[1] - opacityRange[0]) + opacityRange[0],
-            twinkleDelay: Math.random() * 5,
-        }));
-    };
+    return Array.from({ length: count }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 500 - 100, // Changed: allows stars from -100vh to 400vh
+        size: Math.random() * (sizeRange[1] - sizeRange[0]) + sizeRange[0],
+        opacity: Math.random() * (opacityRange[1] - opacityRange[0]) + opacityRange[0],
+        twinkleDelay: Math.random() * 5,
+    }));
+};
 
-    const distantStars = generateStars(200, [0.5, 1], [0.3, 0.6]);
-    const mediumStars = generateStars(100, [1, 2], [0.5, 0.8]);
-    const closeStars = generateStars(50, [1.5, 3], [0.7, 1]);
-    const brightStars = generateStars(20, [2, 4], [0.8, 1]);
+    const distantStars = useMemo(()=> generateStars(200, [0.5, 1], [0.3, 0.6]),[])
+    const mediumStars = useMemo(()=> generateStars(100, [1, 2], [0.5, 0.8]),[])
+    const closeStars = useMemo(()=> generateStars(50, [1.5, 3], [0.7, 1]),[])
+    const brightStars = useMemo(()=> generateStars(20, [2, 4], [0.8, 1]),[])
 
     return (
-        <div className="absolute -z-10 min-h-screen">
+        <div className="absolute -z-10  min-h-screen">
             {/* Space background with gradient */}
             <div
                 className="fixed inset-0 w-full h-full"

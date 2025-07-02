@@ -11,7 +11,7 @@ export default function Loader() {
           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
         </svg>
         <div className="">
-          {Math.floor(progress)}% Loading...
+          {Math.floor(progress)}% Loading 3D Model...
         </div>
       </div>
     </Html>

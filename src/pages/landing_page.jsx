@@ -700,7 +700,6 @@ const SpacePortfolio = () => {
             </div>
 
             {/*JUPITER */}
-            {/*JUPITER */}
             <div className='hidden p-5 px-40 mb-20 md:flex justify-between items-center'>
                 <div>
                     <h1 className='text-white'></h1>
@@ -724,7 +723,9 @@ const SpacePortfolio = () => {
                             far: 1000
                         }}
                     >
-                        <ProjectsScene />
+                        <Suspense fallback={<Loader />}>
+                            <ProjectsScene />
+                        </Suspense>
 
 
 

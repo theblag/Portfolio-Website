@@ -28,7 +28,17 @@
 .animate-gradient {
   animation: gradient 3s ease infinite;
 }
+.perspective-1000 {
+  perspective: 1000px;
+}
 
+.rotateY-0 {
+  transform: rotateY(0deg);
+}
+
+.rotateY-180 {
+  transform: rotateY(180deg);
+}
 
 
 ::-webkit-scrollbar {
@@ -47,4 +57,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(95, 95, 95, 0.738);
 }
-
+::-webkit-scrollbar-button {
+  display: none;
+}

@@ -7,7 +7,7 @@ const frontent_techstack = () => {
             {/* Python */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -22,7 +22,7 @@ const frontent_techstack = () => {
             {/* JavaScript */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -37,7 +37,7 @@ const frontent_techstack = () => {
             {/* React */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -52,7 +52,7 @@ const frontent_techstack = () => {
             {/* Tailwind CSS */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -67,7 +67,7 @@ const frontent_techstack = () => {
             {/*Next JS*/}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -80,7 +80,7 @@ const frontent_techstack = () => {
             {/* Java */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -94,7 +94,7 @@ const frontent_techstack = () => {
             {/* cpp */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -109,7 +109,7 @@ const frontent_techstack = () => {
             {/* HTML */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -124,7 +124,7 @@ const frontent_techstack = () => {
             {/* CSS */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">
@@ -139,7 +139,7 @@ const frontent_techstack = () => {
             {/* PHP */}
             <div
 
-                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-full p-3 hover:border-red-400/60 transition-all duration-300"
+                className="group px-5 hover:bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-3 hover:border-red-400/60 transition-all duration-300"
             >
 
                 <div className="flex items-center justify-center gap-2">

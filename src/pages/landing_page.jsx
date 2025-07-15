@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Add this line
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MapPin } from 'lucide-react';
 import '../App.css'
 import Space from '../components/space';
@@ -9,7 +9,9 @@ import { OrbitControls, Environment } from '@react-three/drei';
 
 import PlanetModel from '../components/earth_model';
 import MarsModel from '../components/mars_model';
-import JupiterModel from '../components/jupiter_model';
+import ProjectText from '../components/project_text'
+import ProjectGrid from '../components/project_bento_grid';
+
 import NeptuneModel from '../components/neptune_model'
 import Profile from '../components/profile'
 import ScrollDown from '../components/scroll_down';
@@ -17,6 +19,10 @@ import Frontend from '../components/frontent_techstack';
 import Backend from '../components/backend_techstack'
 import Tools from '../components/tools_techstack';
 import Loader from '../components/Loading';
+import ProjectsScene from '../components/projects';
+import ProjectMob from '../components/project-bento-mob'
+
+import Toggle from '../components/toggle';
 
 import Kotinos from '../assets/kotinos.png'
 import Vaultmaster from '../assets/vaultmaster.png'
@@ -24,118 +30,11 @@ import Tabout from '../assets/tabout.png'
 import Echonotes from '../assets/echonotes.png';
 import Mplayer from '../assets/mplayer.png';
 import Mocktern from '../assets/mocktern.png'
+import { div } from 'three/tsl';
 
 const SpacePortfolio = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const projects = [
-        {
-            title: "Vaultmaster",
-            description: "Full-stack password manager with AES encryption and Password generator.",
-            tech: ["React", "Node.js", "MongoDB", "Supabase", "Tailwind CSS"],
-            link: "https://vaultmaster.vercel.app",
-            code: "https://github.com/theblag/vaultmaster",
-            image: Vaultmaster
-        },
-        {
-            title: "TabOut - Chrome Extension",
-            description: "A Chrome extension that helps you stay focused by blocking distracting websites temporarily, using timers.",
-            tech: ["React", "JavaScript", "Tailwind CSS"],
-            link: "https://github.com/theblag/tabout-website-blocker",
-            code: "https://github.com/theblag/tabout-website-blocker",
-            image: Tabout
-        },
-        {
-            title: "Mocktern",
-            description: "A fake internship and course detector, which combines advanced AI analysis with real community consensus to protect you from scams and highlight real opportunities instantly.",
-            tech: ["React", "Firebase", "Tailwind CSS","Gemini API",],
-            link: "https://mocktern.vercel.app",
-            code: "https://github.com/theblag/mocktern",
-            image: Mocktern
-        },
-        {
-            title: "Kotinos",
-            description: "A web app for athletes to elevate their career by showcasing achievements, connecting with people, AI assisted health care and crownfunding.",
-            tech: ["React", "Node.js", "Firebase", "Tailwind CSS"],
-            link: "https://kotinos.vercel.app/",
-            code: "https://github.com/theblag/kotinos",
-            image: Kotinos
-        },
-        {
-            title: "Echo Notes",
-            description: "A todo list web app, that uses the local storage, and has a simple and clean UI. One of my first projects.",
-            tech: ["React", "Tailwind CSS"],
-            link: "https://echonotes-seven.vercel.app/",
-            code: "https://github.com/theblag/todo-list",
-            image: Echonotes
-        },
-        {
-            title: "Music Player",
-            description: "A web app that allows you to play music from your local files, with a simple and clean UI.",
-            tech: ["HTML", "CSS", "JavaScript"],
-            link: "https://github.com/theblag/MusicPlayer",
-            code: "https://github.com/theblag/MusicPlayer",
-            image: Mplayer
-        }
-    ];
 
-    const projectsPerSlide = 1;
-    const totalSlides = Math.ceil(projects.length / projectsPerSlide);
-
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-    };
-    const ProjectCard = ({ project, index }) => (
-        <div
-            className="group w-[80%] mx-auto relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-100/10 via-orange-100/5 to-yellow-800/10 backdrop-blur-sm border border-yellow-200/20 hover:border-yellow-300/40 transition-all duration-300 hover:scale-105"
-        >
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/5 via-transparent to-orange-700/10"></div>
-
-            <div className="relative p-6">
-                <img className='rounded-lg relative z-20 border border-white/10 mb-2' src={project.image} alt={project.image} />
-                <div className="mb-4">
-                    <h3 className="text-xl inter font-semibold text-yellow-100 mb-2 group-hover:text-yellow-50 transition-colors">
-                        {project.title}
-                    </h3>
-                    <p className="text-gray-300 inter text-sm leading-relaxed">
-                        {project.description}
-                    </p>
-                </div>
-
-                <div className="mb-6">
-                    <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, techIndex) => (
-                            <span
-                                key={techIndex}
-                                className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-yellow-200/20 to-orange-200/20 text-yellow-100 border border-yellow-200/30"
-                            >
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="flex gap-3">
-                    <button
-                        onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
-                        className="flex-1 inter px-4 py-2 bg-gradient-to-r from-yellow-600 to-orange-500 hover:from-yellow-500 hover:to-orange-400 text-white text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-yellow-500/25"
-                    >
-                        View Live
-                    </button>
-                    <a href={project.code} target='_blank' rel="noopener noreferrer"><button className="px-4 inter py-2 border border-yellow-400/50 hover:border-yellow-300 text-yellow-100 hover:text-yellow-50 text-sm font-medium rounded-lg transition-all duration-200 hover:bg-yellow-400/10">
-                        Code
-                    </button></a>
-                </div>
-            </div>
-
-            {/* Jupiter-inspired orbital rings */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 border border-yellow-200/20 rounded-full"></div>
-            <div className="absolute -top-2 -right-2 w-12 h-12 border border-orange-300/30 rounded-full"></div>
-        </div>
-    );
+    const [is3D, setIs3D] = useState(false);
     const handleGetInTouch = () => {
         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     };
@@ -153,6 +52,59 @@ const SpacePortfolio = () => {
             },
             opacity: 0,
             duration: 0.5
+        });
+        gsap.fromTo(".earth .bg-gradient-to-r", {
+            width: "0%"
+        }, {
+            width: "100%",
+            duration: 1.2,
+            delay: 1.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".earth",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            }
+        });
+        gsap.fromTo(".mars .bg-gradient-to-r", {
+            width: "0%"
+        }, {
+            width: "100%",
+            duration: 1.2,
+            delay: 0.6, // After the subtitle
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".mars",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        gsap.fromTo(".projects-subtitle + div", {
+            width: "0%"
+        }, {
+            width: "100%",
+            duration: 1,
+            delay: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".projects-title",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+        gsap.fromTo(".neptune .bg-gradient-to-r", {
+            width: "0%"
+        }, {
+            width: "100%",
+            duration: 1,
+            delay: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".neptune",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            }
         });
         if (!isMobile) {
             gsap.to(".scroll-down-text", {
@@ -317,94 +269,161 @@ const SpacePortfolio = () => {
 
 
             // Jupiter section animations (Projects)
-            gsap.fromTo(".projects-title", {
+            const disableTransitions = (selector) => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => {
+                    el.style.transition = 'none';
+                });
+            };
+
+            // Re-enable transitions after GSAP animations complete
+            const enableTransitions = (selector, delay = 0) => {
+                setTimeout(() => {
+                    const elements = document.querySelectorAll(selector);
+                    elements.forEach(el => {
+                        el.style.transition = 'all 0.3s ease';
+                    });
+                }, delay);
+            };
+
+            // Disable transitions before animations
+            disableTransitions('[class*="col-span"]');
+            disableTransitions('.echo-notes');
+            disableTransitions('.music-player');
+            disableTransitions('.tabout');
+
+            gsap.fromTo(".projects-title, .projects-subtitle", {
                 scale: 0.8,
-                opacity: 0
+                opacity: 0,
+                y: -30
             }, {
                 scale: 1,
                 opacity: 1,
+                y: 0,
                 duration: 1.2,
+                ease: "power2.out",
                 scrollTrigger: {
-                    trigger: ".jupiter",
-                    start: "top 70%",
+                    trigger: ".projects-title",
+                    start: "top 80%",
                     toggleActions: "play none none reverse"
                 }
             });
 
-            gsap.fromTo(".projects-subtitle", {
-                y: 30,
-                opacity: 0
+            // Project cards with smoother animations
+            gsap.fromTo(".col-span-6.row-span-2", {
+                scale: 0.9,
+                opacity: 0,
+                y: 40
             }, {
-                y: 0,
+                scale: 1,
                 opacity: 1,
+                y: 0,
                 duration: 1,
-                delay: 0.3,
+                ease: "power2.out",
                 scrollTrigger: {
-                    trigger: ".jupiter",
-                    start: "top 70%",
+                    trigger: ".col-span-6.row-span-2",
+                    start: "top 85%",
                     toggleActions: "play none none reverse"
-                }
+                },
+                onComplete: () => enableTransitions('.col-span-6.row-span-2', 500)
             });
 
-            gsap.fromTo(".projects-carousel", {
-                x: 100,
-                opacity: 0
-            }, {
-                x: 0,
-                opacity: 1,
-                duration: 1.2,
-                delay: 0.6,
-                scrollTrigger: {
-                    trigger: ".jupiter",
-                    start: "top 60%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-
-            gsap.fromTo(".project-nav-button-r", {
-                scale: 0,
-                opacity: 0
+            gsap.fromTo(".tabout", {
+                scale: 0.95,
+                opacity: 0,
+                y: 30
             }, {
                 scale: 1,
                 opacity: 1,
-                duration: 0.8,
-                delay: 1.0,
-                scrollTrigger: {
-                    trigger: ".jupiter",
-                    start: "top 60%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-
-            gsap.fromTo(".project-nav-button-l", {
-                scale: 0,
-                opacity: 0
-            }, {
-                scale: 1,
-                opacity: 1,
-                duration: 0.8,
-                delay: 1.0,
-                scrollTrigger: {
-                    trigger: ".jupiter",
-                    start: "top 60%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-
-            gsap.fromTo(".project-indicators", {
-                y: 20,
-                opacity: 0
-            }, {
                 y: 0,
-                opacity: 1,
-                duration: 0.6,
-                delay: 1.3,
+                duration: 0.8,
+                delay: 0.2,
+                ease: "power2.out",
                 scrollTrigger: {
-                    trigger: ".jupiter",
-                    start: "top 60%",
+                    trigger: ".tabout",
+                    start: "top 85%",
                     toggleActions: "play none none reverse"
-                }
+                },
+                onComplete: () => enableTransitions('.tabout', 500)
             });
+
+            gsap.fromTo(".col-span-3.row-span-2", {
+                scale: 0.95,
+                opacity: 0,
+                y: 30
+            }, {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.4,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".col-span-3.row-span-2",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                onComplete: () => enableTransitions('.col-span-3.row-span-2', 500)
+            });
+
+            gsap.fromTo(".echo-notes", {
+                scale: 0.95,
+                opacity: 0,
+                y: 30
+            }, {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.6,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".echo-notes",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                onComplete: () => enableTransitions('.echo-notes', 500)
+            });
+
+            gsap.fromTo(".music-player", {
+                scale: 0.95,
+                opacity: 0,
+                y: 30
+            }, {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".music-player",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                onComplete: () => enableTransitions('.music-player', 500)
+            });
+
+            gsap.fromTo(".col-span-6.row-span-1", {
+                scale: 0.95,
+                opacity: 0,
+                y: 30
+            }, {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".col-span-6.row-span-1",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                onComplete: () => enableTransitions('.col-span-6.row-span-1', 500)
+            });
+
+
 
             // Neptune section animations (Contact)
             gsap.fromTo(".neptune-title", {
@@ -679,104 +698,54 @@ const SpacePortfolio = () => {
                     </Canvas>
                 </div>
             </div>
-            <div className="jupiter flex md:h-[125vh]">
 
-                <div className='relative z-50 mt-40 md:h-[60vh] md:w-[45%] hidden md:block'>
-                    <Canvas className='relative z-50' camera={{ position: [0, 2, 6], fov: 50 }}>
-                        <ambientLight intensity={1.5} />
-                        {/* <directionalLight position={[10, 10, 0]} intensity={1} color="#ffffff" /> */}
-                        <Suspense fallback={<Loader />}>
-                            <JupiterModel scale={2.685} position={[0, 0, 0]} /> {/* <MarsModel scale={2.5} position={[0, 0, 0]} /> */}
-                        </Suspense>
-                        <OrbitControls enableZoom={false} />
-
-                        {/* <Environment preset="sunset" /> */}
-                    </Canvas>
+            {/*JUPITER */}
+            {/*JUPITER */}
+            <div className='hidden p-5 px-40 mb-20 md:flex justify-between items-center'>
+                <div>
+                    <h1 className='text-white'></h1>
                 </div>
-                <div className="md:w-[50%]">
-
-                    <div className=" text-white p-2 md:p-8">
-
-                        <div className="max-w-6xl mx-auto">
-
-                            <div className="mb-12 px-8">
-                                <h1 className="projects-title md:text-5xl text-4xl font-bold mb-4 inter">Projects</h1>
-                                <p className="projects-subtitle text-gray-400 text-lg inter">Some of my featured projects</p>
-                                <div className="w-full h-0.5 bg-gradient-to-r from-amber-200 via-orange-400 to-transparent mt-4"></div>
-                            </div>
-
-                            {/* Projects Carousel */}
-                            <div className="relative ">
-
-                                {/* Carousel Container */}
-                                <div className="projects-carousel overflow-hidden p-3 rounded-xl">
-                                    <div
-                                        className="flex transition-transform duration-500 ease-in-out"
-                                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                                    >
-                                        {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                                            <div key={slideIndex} className="w-full flex-shrink-0">
-                                                <div className="grid grid-cols-1 md:grid-cols-1 gap-6 px-4">
-                                                    {projects
-                                                        .slice(slideIndex * projectsPerSlide, (slideIndex + 1) * projectsPerSlide)
-                                                        .map((project, projectIndex) => (
-                                                            <ProjectCard
-                                                                key={slideIndex * projectsPerSlide + projectIndex}
-                                                                project={project}
-                                                                index={projectIndex}
-                                                            />
-                                                        ))}
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Navigation Buttons */}
-                                {totalSlides > 1 && (
-                                    <div className="">
-                                        <button
-                                            onClick={prevSlide}
-                                            className="project-nav-button-l absolute left-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-yellow-600/80 to-orange-500/80 hover:from-yellow-500 hover:to-orange-400 text-white p-3 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-yellow-500/25 z-10"
-                                        >
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                            </svg>
-                                        </button>
-
-                                        <button
-                                            onClick={nextSlide}
-                                            className="project-nav-button-r absolute right-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-yellow-600/80 to-orange-500/80 hover:from-yellow-500 hover:to-orange-400 text-white p-3 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-yellow-500/25 z-10"
-                                        >
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-
-                            {/* Carousel Indicators */}
-                            {totalSlides > 1 && (
-                                <div className="project-indicators flex justify-center space-x-2 mt-4">
-                                    {Array.from({ length: totalSlides }).map((_, index) => (
-                                        <button
-                                            key={index}
-                                            onClick={() => setCurrentSlide(index)}
-                                            className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentSlide
-                                                ? 'bg-gradient-to-r from-yellow-400 to-orange-400'
-                                                : 'bg-yellow-200/30 hover:bg-yellow-200/50'
-                                                }`}
-                                        />
-                                    ))}
-                                </div>
-                            )}
-
-
-                        </div>
+                <div className='flex items-center gap-6'>
+                    <div className="">
+                        <h1 className='text-white inter text-lg font-medium tracking-wide'>View Mode</h1>
+                        <p className='text-gray-400 inter text-xs font-light'>Switch between layouts</p>
                     </div>
+                    <Toggle is3D={is3D} setIs3D={setIs3D} />
                 </div>
             </div>
+            {is3D ? (
+                <div className="projects ml-10 hidden md:block md:h-[150vh]">
+                    <Canvas
+                        className='relative z-50'
+                        camera={{
+                            fov: 75,
+                            position: [0, 0, 5],
+                            near: 0.1,
+                            far: 1000
+                        }}
+                    >
+                        <ProjectsScene />
+
+
+
+                    </Canvas>
+
+                    {/* Optional instructions overlay */}
+                    {/* <div className=" text-white  h-32 bg-white/10 rounde d-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100/30 p-3 rounded-lg">
+                    <p className="text-sm inter">Controls:</p><br/>
+                    <p className="text-xs inter">WASD - Move around</p>
+                    <p className="text-xs inter">Q/E - Move up/down</p>
+                </div> */}
+                </div>
+            ) : (
+                <div>
+                    <div className='hidden md:block'>
+                        <ProjectGrid  />
+                    </div>
+                    <ProjectMob className='md:hidden' />
+                </div>
+            )}
+
             <div className="neptune flex md:h-[110vh]">
                 <div className="md:w-[45%] md:ml-40 md:mr-32 mr-10 ml-10 mt-20">
                     <div className="flex-1 max-w-2xl">

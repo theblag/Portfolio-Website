@@ -32,6 +32,7 @@ import Mplayer from '../assets/mplayer.png';
 import Mocktern from '../assets/mocktern.png'
 import { div } from 'three/tsl';
 
+import SplashCursor from '../components/SplashCursor'
 const SpacePortfolio = () => {
 
     const [is3D, setIs3D] = useState(false);
@@ -544,7 +545,7 @@ const SpacePortfolio = () => {
     }, [])
     return (
         <div ref={comp} className="relative ">
-
+            <SplashCursor className='relative -z-10' />
             <Space />
 
 

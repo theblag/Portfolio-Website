@@ -328,10 +328,11 @@ function ControlsBillboard({ position }) {
                 occlude="blending"
                 zIndexRange={[100, 0]}
             >
-                <div className=" text-white flex items-center justify-center flex-col w-16 h-12 bg-white/10 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100/30 p-1">
-                    <p className="text-[5px] mb-1">Controls:</p>
-                    <p className="text-[4px] ">WASD - Move around</p>
-                    <p className="text-[4px] ">Q/E - Move up/down</p>
+                <div className=" text-white flex items-center justify-center flex-col w-24 h-20 bg-white/10 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100/30 p-1">
+                    <p className="text-[6px] inter mb-1 text-center">Welcome to 3D Mode. Navigate using your keyboard!</p>
+                    <p className="text-[6px] mb-1">Controls:</p>
+                    <p className="text-[5px] ">W A S D - Move around</p>
+                    <p className="text-[5px] ">Q / E - Move up / down</p>
                 </div>
             </Html>
         </Billboard>

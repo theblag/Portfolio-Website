@@ -8,7 +8,7 @@ function ProfileIcon() {
     return (
         <div className="fixed top-6 right-6 group z-50">
             {/* Your existing icon */}
-            <div className="relative w-16 h-16 rounded-full p-[3px] bg-gradient-to-r from-purple-500 to-cyan-500 bg-[length:200%_200%] animate-gradient cursor-pointer">
+            <div className="relative w-16 h-16 rounded-full p-[3px] bg-gradient-to-r from-purple-500 to-cyan-500 bg-[length:200%_200%] animate-gradient">
                 {/* Inner container */}
                 <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
                     <img src={ProfilePic} alt="Profile" className=" rounded-full" />

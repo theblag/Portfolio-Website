@@ -36,9 +36,7 @@ import SplashCursor from '../components/SplashCursor'
 const SpacePortfolio = () => {
 
     const [is3D, setIs3D] = useState(false);
-    const handleGetInTouch = () => {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    };
+
 
 
 
@@ -545,7 +543,11 @@ const SpacePortfolio = () => {
     }, [])
     return (
         <div ref={comp} className="relative ">
-            <SplashCursor className='relative -z-10' />
+            <SplashCursor SPLAT_FORCE={2000}        // Much gentler
+                DENSITY_DISSIPATION={8}   // Fades quickly
+                VELOCITY_DISSIPATION={5}  // Movement stops faster
+                CURL={1}                 // Minimal swirling
+                COLOR_UPDATE_SPEED={5} className='relative -z-10' />
             <Space />
 
 
@@ -563,9 +565,9 @@ const SpacePortfolio = () => {
                     </p>
                 </div>
 
-                <div className="hidden md:block">
+                {/* <div className="hidden md:block">
                     <Profile />
-                </div>
+                </div> */}
 
 
             </div>
@@ -628,9 +630,36 @@ const SpacePortfolio = () => {
 
                             {/* CTA Button */}
                             <div className="pt-4">
-                                <button onClick={handleGetInTouch} className="cursor-pointer px-6 py-3 bg-transparent border border-blue-500/50 hover:border-indigo-700/50 text-white rounded-lg hover:bg-indigo-900/50 hover:text-white transition-all duration-300 font-medium">
-                                    Get In Touch
-                                </button>
+                                <div className="flex gap-3 flex-wrap">
+                                    <a href="https://github.com/theblag" target='_blank'><button className="cursor-pointer">
+                                        <lord-icon
+                                            src="https://cdn.lordicon.com/ioihllwu.json"
+                                            trigger="hover"
+                                            colors="primary:#3a3347,secondary:#ebe6ef">
+                                        </lord-icon>
+                                    </button></a>
+                                    <a href="https://www.linkedin.com/in/aditya-a-664089332/" target="_blank"><button className="cursor-pointer">
+                                        <lord-icon
+                                            src="https://cdn.lordicon.com/nwqudhei.json"
+                                            trigger="morph"
+                                            state="morph-alone">
+                                        </lord-icon>
+                                    </button></a>
+                                    <a href="https://www.instagram.com/adityaarun._.10/" target='_blank'><button className="cursor-pointer">
+                                        <lord-icon
+                                            src="https://cdn.lordicon.com/wgtaryar.json"
+                                            trigger="hover"
+                                        ></lord-icon>
+                                    </button></a>
+                                    <a href="https://discord.com/users/974604129148231701" target='_blank'><button className="cursor-pointer">
+                                        <lord-icon
+                                            src="https://cdn.lordicon.com/xlsrclta.json"
+                                            trigger="hover"
+                                            state="hover-wink"
+                                        ></lord-icon>
+                                    </button></a>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -742,7 +771,7 @@ const SpacePortfolio = () => {
             ) : (
                 <div>
                     <div className='hidden md:block'>
-                        <ProjectGrid  />
+                        <ProjectGrid />
                     </div>
                     <ProjectMob className='md:hidden' />
                 </div>
@@ -826,9 +855,9 @@ const SpacePortfolio = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <button className="neptune-cta bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 mb-4 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300 font-medium">
-                            Download Resume
-                        </button>
+                        <a href="/Resume.pdf" target="_blank"  rel="noopener noreferrer"><button className="neptune-cta cursor-pointer bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 mb-4 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300 font-medium">
+                            View Resume
+                        </button></a>
                     </div>
                 </div>
                 <div className='relative z-50 mt-40 md:h-[60vh] md:w-[55%] hidden md:block'>

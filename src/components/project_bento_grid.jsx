@@ -200,11 +200,7 @@ const ProjectBentoGrid = () => {
     };
     return (
         <div>
-            <div className="mb-12 px-8 mx-28">
-                <h1 className="projects-title md:text-5xl text-white text-4xl font-bold mb-4 inter">Projects</h1>
-                <p className="projects-subtitle text-gray-400 text-lg inter">Some of my featured projects</p>
-                <div className="w-full h-0.5 bg-gradient-to-r from-amber-200 via-orange-400 to-transparent mt-4"></div>
-            </div>
+            
             <div className="max-w-7xl mx-auto px-6 py-16">
                 <div className="grid grid-cols-12 gap-6 auto-rows-[300px]">
 

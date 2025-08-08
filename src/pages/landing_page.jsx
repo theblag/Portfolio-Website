@@ -33,6 +33,10 @@ import Mocktern from '../assets/mocktern.png'
 import { div } from 'three/tsl';
 
 import SplashCursor from '../components/SplashCursor'
+import { memo } from 'react'
+
+// Memoize SplashCursor to prevent re-renders
+const MemoizedSplashCursor = memo(SplashCursor)
 const SpacePortfolio = () => {
 
     const [is3D, setIs3D] = useState(false);
@@ -78,12 +82,11 @@ const SpacePortfolio = () => {
                 toggleActions: "play none none reverse"
             }
         });
-
-        gsap.fromTo(".projects-subtitle + div", {
+        gsap.fromTo(".projects_line", {
             width: "0%"
         }, {
-            width: "100%",
-            duration: 1,
+            width: "80%",
+            duration: 1.2,
             delay: 0.6,
             ease: "power2.out",
             scrollTrigger: {
@@ -543,7 +546,7 @@ const SpacePortfolio = () => {
     }, [])
     return (
         <div ref={comp} className="relative ">
-            <SplashCursor SPLAT_FORCE={2000}        // Much gentler
+            <MemoizedSplashCursor SPLAT_FORCE={2000}        // Much gentler
                 DENSITY_DISSIPATION={8}   // Fades quickly
                 VELOCITY_DISSIPATION={5}  // Movement stops faster
                 CURL={1}                 // Minimal swirling
@@ -730,9 +733,14 @@ const SpacePortfolio = () => {
             </div>
 
             {/*JUPITER */}
-            <div className='hidden p-5 px-40 mb-20 md:flex justify-between items-center'>
+            <div className='hidden z-50 p-5 px-40 md:flex justify-between items-center'>
                 <div>
-                    <h1 className='text-white'></h1>
+                    {!is3D &&
+                        (<div className="">
+                            <h1 className="projects-title md:text-5xl text-white text-4xl font-bold mb-4 inter">Projects</h1>
+                            <p className="projects-subtitle text-gray-400 text-lg inter">Some of my featured projects</p>
+                        </div>
+                        )}
                 </div>
                 <div className='flex items-center gap-6'>
                     <div className="">
@@ -742,6 +750,11 @@ const SpacePortfolio = () => {
                     <Toggle is3D={is3D} setIs3D={setIs3D} />
                 </div>
             </div>
+            {!is3D && (
+                <div className="w-[80%] mx-40 projects_line h-0.5 bg-gradient-to-r from-amber-200 via-orange-400 to-transparent mt-4"></div>
+
+            )}
+
             {is3D ? (
                 <div className="projects ml-10 hidden md:block md:h-[150vh]">
                     <Canvas
@@ -855,7 +868,7 @@ const SpacePortfolio = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <a href="/Resume.pdf" target="_blank"  rel="noopener noreferrer"><button className="neptune-cta cursor-pointer bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 mb-4 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300 font-medium">
+                        <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer"><button className="neptune-cta cursor-pointer bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 mb-4 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-300 font-medium">
                             View Resume
                         </button></a>
                     </div>

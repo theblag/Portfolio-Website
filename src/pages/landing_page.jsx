@@ -751,7 +751,7 @@ const SpacePortfolio = () => {
                 </div>
             </div>
             {!is3D && (
-                <div className="w-[80%] mx-40 projects_line h-0.5 bg-gradient-to-r from-amber-200 via-orange-400 to-transparent mt-4"></div>
+                <div className="w-[80%] hidden md:block mx-40 projects_line h-0.5 bg-gradient-to-r from-amber-200 via-orange-400 to-transparent mt-4"></div>
 
             )}
 

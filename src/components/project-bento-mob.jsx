@@ -16,6 +16,8 @@ import Echonotes from '../assets/echonotes.png';
 import Mplayer from '../assets/mplayer.png';
 import Mocktern from '../assets/mocktern2.png'
 import Mocktern2 from '../assets/mocktern1.png'
+import Medsense1 from '../assets/medsense1.png'
+import Medsense2 from '../assets/medsense2.png'
 
 const ImageCarousel = ({ images, alt, className, animationType = 'fade', interval = 3000 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -121,7 +123,8 @@ const MobileProjectGrid = () => {
         mocktern: [Mocktern, Mocktern2],
         tabout: [Tabout2, Tabout],
         echonotes: [Echonotes],
-        mplayer: [Mplayer]
+        mplayer: [Mplayer],
+        medsense: [Medsense1, Medsense2]
     };
 
     const projects = [
@@ -172,6 +175,14 @@ const MobileProjectGrid = () => {
             codeLink: "https://github.com/theblag/MusicPlayer",
             images: projectImages.mplayer,
             animationType: "fade"
+        },
+        {
+            title: "MedSense",
+            tech: ["HTML", "CSS"],
+            liveLink: "https://sdg-med-sense.vercel.app/",
+            codeLink: "https://github.com/theblag/SDG-MedSense",
+            images: projectImages.medsense,
+            animationType: "zoom"
         }
     ];
 
@@ -351,8 +362,28 @@ const MobileProjectGrid = () => {
                     </div>
                 </div>
 
-                {/* Empty space for balance */}
-                <div className="col-span-1 row-span-1"></div>
+                {/* 7th project*/}
+                <div className="col-span-1 row-span-1 group relative overflow-hidden rounded-xl bg-gray-800/40 border border-gray-600/30 hover:border-gray-500/50 transition-all duration-300">
+                    <ImageCarousel
+                        images={projects[6].images}
+                        alt={projects[6].title}
+                        className="w-full h-full"
+                        animationType={projects[6].animationType}
+                        interval={3000}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-2">
+                        <h3 className="text-white font-semibold text-xs inter mb-1">{projects[6].title}</h3>
+                        <div className="flex gap-2">
+                            <a href={projects[6].liveLink} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink size={12} className="text-white/80 hover:text-white" />
+                            </a>
+                            <a href={projects[6].codeLink} target="_blank" rel="noopener noreferrer">
+                                <Github size={12} className="text-white/80 hover:text-white" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -12,6 +12,8 @@ import Tabout from '../assets/tabout.png'
 import Echonotes from '../assets/echonotes.png';
 import Mplayer from '../assets/mplayer.png';
 import Mocktern from '../assets/mocktern.png'
+import MedSense1 from '../assets/medsense1.png'
+import MedSense2 from '../assets/medsense2.png'
 
 const projects = [
     {
@@ -30,7 +32,7 @@ const projects = [
         link: "https://kotinos.vercel.app/",
         code: "https://github.com/theblag/kotinos",
         image: Kotinos,
-        position: [14, 0, -40]
+        position: [14, 0, -60]
     },
     {
         title: "Mocktern",
@@ -61,13 +63,13 @@ const projects = [
         position: [-14, 0, -62]
     },
     {
-        title: "Music Player",
-        description: "A web app that allows you to play music from your local files, with a simple and clean UI.",
-        tech: ["HTML", "CSS", "JavaScript"],
-        link: "https://github.com/theblag/MusicPlayer",
-        code: "https://github.com/theblag/MusicPlayer",
-        image: Mplayer,
-        position: [14, 0, -60]
+        title: "MedSense",
+        description: "An AI powered web app, that uses OCR and Langchain to detect medical mis-info.",
+        tech: ["ReactJS", "Python", "Gemini API"],
+        link: "https://github.com/theblag/SDG-MedSense",
+        code: "https://sdg-med-sense.vercel.app/",
+        image: MedSense2,
+        position: [14, 0, -40]
     }
 ];
 

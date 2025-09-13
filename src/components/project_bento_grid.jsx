@@ -18,6 +18,8 @@ import Echonotes from '../assets/echonotes.png';
 import Mplayer from '../assets/mplayer.png';
 import Mocktern from '../assets/mocktern2.png'
 import Mocktern2 from '../assets/mocktern1.png'
+import MedSense1 from '../assets/medsense1.png'
+import MedSense2 from '../assets/medsense2.png'
 
 import JupiterModel from '../components/jupiter_model';
 import Loader from '../components/Loading';
@@ -188,9 +190,8 @@ const ProjectBentoGrid = () => {
             Mocktern2
         ],
         project5: [
-            "/api/placeholder/500/300",
-            "/api/placeholder/500/300",
-            "/api/placeholder/500/300"
+            MedSense1,
+            MedSense2
         ],
         project6: [
             "/api/placeholder/500/300",
@@ -296,7 +297,8 @@ const ProjectBentoGrid = () => {
                                 className="w-full h-36 mb-3"
                                 animationType="zoom"
                                 interval={2870}
-                            />                            <div className="flex-1">
+                            />                            
+                            <div className="flex-1">
                                 <h3 className="text-lg inter font-semibold text-white mb-2 group-hover:text-gray-200 transition-colors">
                                     Kotinos
                                 </h3>
@@ -374,28 +376,34 @@ const ProjectBentoGrid = () => {
                     <div className="col-span-3 row-span-1 music-player group relative overflow-hidden rounded-xl bg-gray-800/40 border border-gray-600/30 hover:border-gray-500/50 transition-all duration-300 hover:scale-[1.02]">
                         <div className="absolute inset-0 bg-gradient-to-br from-gray-700/10 via-transparent to-gray-800/20"></div>
                         <div className="relative p-4 h-full flex flex-col">
-                            <img className='rounded-lg relative w-full h-fit object-cover z-20 border border-white/10 mb-3' src={Mplayer} alt="Project 6" />
+                            <ImageCarousel
+                                images={projectImages.project5}
+                                alt="Featured Project"
+                                className="w-full h-80 mb-4"
+                                animationType="flip"
+                                interval={1800}
+                            />
                             <div className="flex-1">
                                 <h3 className="text-lg inter font-semibold text-white mb-2 group-hover:text-gray-200 transition-colors">
-                                    Music Player
+                                    MedSense
                                 </h3>
                                 <p className="text-gray-300 inter text-xs leading-relaxed mb-3">
-                                    A web app that allows you to play music from your local files, with a simple and clean UI.
+                                    An AI powered web app, that uses OCR and Langchain to detect medical mis-info.
                                 </p>
 
                             </div>
                             <div className="flex justify-between">
                                 <div className="flex flex-wrap gap-1">
-                                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-700/30 text-gray-300 border border-gray-600/40">HTML</span>
-                                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-700/30 text-gray-300 border border-gray-600/40">CSS</span>
-                                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-700/30 text-gray-300 border border-gray-600/40">JavaScript</span>
+                                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-700/30 text-gray-300 border border-gray-600/40">ReactJS</span>
+                                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-700/30 text-gray-300 border border-gray-600/40">Python</span>
+                                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-700/30 text-gray-300 border border-gray-600/40">OCR</span>
 
                                 </div>
                                 <div className='flex gap-2'>
-                                    <button className="justify-center items-center px-3 py-1.5 bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white text-xs font-medium rounded-lg transition-all duration-200">
+                                    <a href="https://sdg-med-sense.vercel.app/" target='_blank'><button className="justify-center items-center px-3 py-1.5 bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white text-xs font-medium rounded-lg transition-all duration-200">
                                         <Link size={12} />
-                                    </button>
-                                    <a href='https://github.com/theblag/MusicPlayer' target='_blank'><button className="px-3 py-1.5 border border-gray-500/50 hover:border-gray-400 text-gray-300 hover:text-gray-200 text-xs font-medium rounded-lg transition-all duration-200 hover:bg-gray-600/20">
+                                    </button></a>
+                                    <a href='https://github.com/theblag/SDG-MedSense' target='_blank'><button className="px-3 py-1.5 border border-gray-500/50 hover:border-gray-400 text-gray-300 hover:text-gray-200 text-xs font-medium rounded-lg transition-all duration-200 hover:bg-gray-600/20">
                                         <Code size={12} />
                                     </button></a>
                                 </div>
